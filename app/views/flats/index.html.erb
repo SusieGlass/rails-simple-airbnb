@@ -1,0 +1,23 @@
+<h1 class= "text-center"><strong>Tous nos appartements</strong></h1>
+
+
+<div class= "gridcontainer">
+  <% @flats.each do |flat| %>
+    <%= link_to flat_path(flat) do %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= flat.name %></h2>
+              <p><%= flat.description %></p>
+              <p><%= flat.address %></p>
+              <p><strong><%= flat.number_of_guests %> guests</strong></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= flat.price_per_night %>€</h2>
+          </div>
+      </div>
+
+    <% end %>
+  <% end %>
+
+</div>
